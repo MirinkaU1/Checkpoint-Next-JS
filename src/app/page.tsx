@@ -215,7 +215,7 @@ export default function Page() {
                 </Link>{" "}
                 ou{" "}
                 <Link
-                  href={DATA.contact.social.X.url}
+                  href="https://wa.me/qr/HEFH7INMX66YD1"
                   className="text-blue-500 hover:underline"
                 >
                   sur WhatsApp

@@ -162,54 +162,51 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Trendy Blog",
+      title: "Multiple Store",
       href: "https://multiplestoretest.netlify.app/",
-      dates: "Sept 2024 - Oct 2024",
+      dates: "Sept 2024 - Present",
       active: true,
-      description: "",
-      technologies: ["HTML", "TailwindCSS"],
+      description:
+        "Multiple Store est un site e-commerce permettant de souscrire à des abonnements partagés (Netflix, Spotify, etc..). Construit avec la stack MERN, il propose une interface intuitive, un tableau de bord personnalisé, et une gestion simplifiée des abonnements. Optimisé avec Tailwind CSS.",
+      technologies: ["React", "Next.js", "TailwindCSS", "Magic UI"],
       links: [
         {
           type: "Website",
-          href: "https://chatcollect.com",
+          href: "https://multiplestoretest.netlify.app/",
           icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/MirinkaU1/PersonalProject.git",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "/multiplestore.mp4",
+    },
+    {
+      title: "Trendy Blog",
+      href: "https://mirinkau1.github.io/Project-TailwindCSS/",
+      dates: "Sept 2024 - Oct 2024",
+      active: true,
+      description:
+        "Un checkpoint qui consistait à créer un blog à l'aide de Tailwind pour structurer la mise en page, les composants de style et améliorer l'aspect visuel.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      links: [
+        {
+          type: "Website",
+          href: "https://mirinkau1.github.io/Project-TailwindCSS/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/MirinkaU1/Project-TailwindCSS.git",
+          icon: <Icons.github className="size-3" />,
         },
       ],
       image: "",
       video: "/trendyblog.mp4",
     },
-    // {
-    //   title: "Trendy Blog",
-    //   href: "https://magicui.design",
-    //   dates: "June 2023 - Present",
-    //   active: true,
-    //   description:
-    //     "Designed, developed and sold animated UI components for developers.",
-    //   technologies: [
-    //     "Next.js",
-    //     "Typescript",
-    //     "PostgreSQL",
-    //     "Prisma",
-    //     "TailwindCSS",
-    //     "Stripe",
-    //     "Shadcn UI",
-    //     "Magic UI",
-    //   ],
-    //   links: [
-    //     {
-    //       type: "Website",
-    //       href: "https://magicui.design",
-    //       icon: <Icons.globe className="size-3" />,
-    //     },
-    //     {
-    //       type: "Source",
-    //       href: "https://github.com/magicuidesign/magicui",
-    //       icon: <Icons.github className="size-3" />,
-    //     },
-    //   ],
-    //   image: "",
-    //   video: "https://cdn.magicui.design/bento-grid.mp4",
-    // },
   ],
   // hackathons: [
   //   {
