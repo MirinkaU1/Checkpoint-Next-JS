@@ -220,8 +220,7 @@ export default function Page() {
                 >
                   sur WhatsApp
                 </Link>{" "}
-                et je vous répondrai dès que possible. J&apos;ignorerai toute
-                sollicitation.
+                et je vous répondrai dès que possible.
               </p>
             </div>
           </BlurFade>
