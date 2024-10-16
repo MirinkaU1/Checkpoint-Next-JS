@@ -162,7 +162,7 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Multiple Store",
+      title: "Trendy Blog",
       href: "https://multiplestoretest.netlify.app/",
       dates: "Sept 2024 - Oct 2024",
       active: true,
