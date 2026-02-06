@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -6,10 +8,20 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { useState, useEffect } from "react";
+import Autoplay from "embla-carousel-autoplay";
 
 interface Props {
   title: string;
@@ -18,7 +30,7 @@ interface Props {
   dates: string;
   tags: readonly string[];
   link?: string;
-  image?: string;
+  images?: readonly string[];
   video?: string;
   links?: readonly {
     icon: React.ReactNode;
@@ -35,41 +47,132 @@ export function ProjectCard({
   dates,
   tags,
   link,
-  image,
+  images,
   video,
   links,
   className,
 }: Props) {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+  const [progress, setProgress] = useState(0);
+
+  const hasMultipleImages = images && images.length > 1;
+  const AUTO_SLIDE_INTERVAL = 5000;
+
+  useEffect(() => {
+    if (!api) return;
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+      setProgress(0);
+    });
+  }, [api]);
+
+  useEffect(() => {
+    if (!hasMultipleImages || !api) return;
+
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) return 0;
+        return prev + 100 / (AUTO_SLIDE_INTERVAL / 100);
+      });
+    }, 100);
+
+    return () => clearInterval(progressInterval);
+  }, [hasMultipleImages, api, current]);
+
   return (
-    <Card
-      className={
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
-      }
-    >
-      <Link
-        href={href || "#"}
-        className={cn("block cursor-pointer", className)}
-      >
-        {video && (
-          <video
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="pointer-events-none mx-auto h-40 w-full object-cover object-top" // needed because random black line at bottom of video
-          />
+    <Card className="group flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full">
+      <div className="relative">
+        {video && !images?.length && (
+          <Link
+            href={href || "#"}
+            className={cn("block cursor-pointer", className)}
+          >
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
+            />
+          </Link>
         )}
-        {image && (
-          <Image
-            src={image}
-            alt={title}
-            width={500}
-            height={300}
-            className="h-40 w-full overflow-hidden object-cover object-top"
-          />
+
+        {images && images.length > 0 && !video && (
+          <Carousel
+            setApi={setApi}
+            className="w-full"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: AUTO_SLIDE_INTERVAL,
+              }),
+            ]}
+          >
+            <CarouselContent>
+              {images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <Link
+                    href={href || "#"}
+                    className={cn("block cursor-pointer", className)}
+                  >
+                    <div className="relative h-40 w-full overflow-hidden">
+                      <Image
+                        src={image}
+                        alt={`${title} - Image ${index + 1}`}
+                        width={500}
+                        height={300}
+                        className="h-full w-full object-cover object-top"
+                      />
+                    </div>
+                  </Link>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+
+            {hasMultipleImages && (
+              <>
+                <CarouselPrevious className="left-2 bg-black/50 hover:bg-black/80 border-none text-white hover:text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                <CarouselNext className="right-2 bg-black/50 hover:bg-black/80 border-none text-white hover:text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                {/* Indicateurs de slide */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1 z-10">
+                  {images.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => api?.scrollTo(index)}
+                      className={cn(
+                        "h-1.5 rounded-full transition-all",
+                        index === current
+                          ? "w-6 bg-white"
+                          : "w-1.5 bg-white/50 hover:bg-white/75",
+                      )}
+                      aria-label={`Aller à l'image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+
+                {/* Barre de progression */}
+                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white/20">
+                  <div
+                    className="h-full bg-white transition-all duration-100 ease-linear"
+                    style={{ width: `${progress}%` }}
+                  />
+                </div>
+              </>
+            )}
+          </Carousel>
         )}
-      </Link>
+      </div>
       <CardHeader className="px-2">
         <div className="space-y-1">
           <CardTitle className="mt-1 text-base">{title}</CardTitle>

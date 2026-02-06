@@ -1,30 +1,38 @@
 import { Icons } from "@/components/icons";
+import { url } from "inspector";
 import { HomeIcon, NotebookIcon } from "lucide-react";
+
+export interface Skill {
+  name: string;
+  icon?: string;
+}
 
 export const DATA = {
   name: "Cherif Mohamed Abraham",
+  pseudo: "Moimed",
   initials: "CMA",
-  url: "https://dillion.io",
+  url: "https://moimed.dev",
+  githubUsername: "MirinkaU1",
   location: "Abidjan, Côte d'Ivoire",
   locationLink: "https://www.google.com/maps/place/Adjame",
   description:
     "Développeur full-stack spécialisé en React et Node.js. J'aide à concevoir des applications web optimisées et axées sur l'expérience utilisateur.",
   summary:
     "Je suis développeur full-stack avec une solide formation en développement web, acquise à [GoMyCode](/#education), où j'ai approfondi mes compétences en JavaScript, React, et Node.js. Au cours de ma formation, j'ai eu l'occasion de travailler sur plusieurs projets pratiques qui m'ont permis de maîtriser l'architecture des applications web modernes.",
-  avatarUrl: "/me.jpg",
+  avatarUrl: "/img/avatar/me.jpg",
   skills: [
-    "React",
-    "Vue.js",
-    "Next.js",
-    "Typescript",
-    "Node.js",
-    "Express",
-    "MongoDB",
-    "TailwindCSS",
-  ],
+    { name: "React", icon: "/svg/reactjs-icon.svg" },
+    { name: "Vue.js", icon: "/svg/vuejs-icon.svg" },
+    { name: "Next.js", icon: "/svg/nextjs-icon.svg" },
+    { name: "Typescript", icon: "/svg/typescriptlang-icon.svg" },
+    { name: "Node.js", icon: "/svg/nodejs-icon.svg" },
+    { name: "Express", icon: "/svg/expressjs-icon.svg" },
+    { name: "MongoDB", icon: "/svg/mongodb-icon.svg" },
+    { name: "TailwindCSS", icon: "/svg/tailwindcss-icon.svg" },
+  ] as Skill[],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    // { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
     email: "cherifmohamedabraham@gmail.com",
@@ -68,7 +76,7 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "Développeur Front-end",
-      logoUrl: "/great.png",
+      logoUrl: "/img/work/great.png",
       start: "Novembre 2024",
       end: "Present",
       description:
@@ -80,7 +88,7 @@ export const DATA = {
       school: "GoMyCode",
       href: "https://gomycode.com/ic/",
       degree: "Software Developer Certification",
-      logoUrl: "/gomycode.jpg",
+      logoUrl: "/img/education/gomycode.jpg",
       start: "2024",
       end: "2024",
     },
@@ -88,7 +96,7 @@ export const DATA = {
       school: "Ecole Nouvelle Supérieure d'Ingénieurs et de Technologie",
       href: "https://ensit.ci/",
       degree: "Cycle Ingénieur en Informatique",
-      logoUrl: "/ensit.jpg",
+      logoUrl: "/img/education/ensit.jpg",
       start: "2021",
       end: "2023",
     },
@@ -96,17 +104,62 @@ export const DATA = {
       school: "Collège Adventiste Bouaké",
       href: "https://wlu.ca",
       degree: "Baccaleauréat D",
-      logoUrl: "/adventiste.jpg",
+      logoUrl: "/img/education/adventiste.jpg",
       start: "2020",
       end: "2021",
     },
   ],
   projects: [
     {
+      title: "corner-shape Generator",
+      href: "https://corner-shape-generator.vercel.app/",
+      dates: "Dec 2025",
+      active: true,
+      category: "website",
+      description:
+        "Un petit projet perso conçu pour explorer et manipuler la nouvelle propriété CSS corner-shape. Cet outil interactif permet aux développeurs de visualiser et de générer en un clic le code nécessaire pour créer des coins biseautés (bevel) ou arrondis (round), offrant une alternative moderne et native aux clip-path complexes.",
+      technologies: ["Next.js", "React", "Tailwind CSS"],
+      links: [
+        {
+          type: "Website",
+          href: "https://corner-shape-generator.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/MirinkaU1/corner-shape_generator.git",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      images: ["/img/projects/corner-shape.png"],
+      video: "",
+    },
+    {
+      title: "Stephane & Carole",
+      href: "https://couple-sarr.wedlyup.com/",
+      dates: "Mai 2025 - Juin 2025",
+      active: true,
+      description:
+        "Un site de mariage pour Stephane et Carole. Le site présente des informations sur les mariés, les détails de l'événement, et une galerie de photos. ",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      links: [
+        {
+          type: "Website",
+          href: "https://couple-sarr.wedlyup.com/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      images: [
+        "/img/projects/weeding-site.jpeg",
+        "/img/projects/weeding-site-2.png",
+      ],
+      video: "",
+    },
+    {
       title: "Multiple Store",
       href: "https://multiplestoretest.netlify.app/",
-      dates: "Sept 2024 - Present",
-      active: true,
+      dates: "Sept 2024 - Dec 2024",
+      active: false,
       description:
         "Multiple Store est un site e-commerce permettant de souscrire à des abonnements partagés (Netflix, Spotify, etc..). Construit avec la stack MERN, il propose une interface intuitive, un tableau de bord personnalisé, et une gestion simplifiée des abonnements. Optimisé avec Tailwind CSS.",
       technologies: ["React", "Next.js", "TailwindCSS", "Magic UI"],
@@ -122,8 +175,8 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
-      video: "/multiplestore.mp4",
+      images: [],
+      video: "/video/projects/multiplestore.mp4",
     },
     {
       title: "Trendy Blog",
@@ -145,8 +198,8 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
-      video: "/trendyblog.mp4",
+      images: [],
+      video: "/video/projects/trendyblog.mp4",
     },
   ],
   // hackathons: [
