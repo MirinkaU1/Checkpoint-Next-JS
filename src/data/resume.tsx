@@ -1,5 +1,4 @@
 import { Icons } from "@/components/icons";
-import { url } from "inspector";
 import { HomeIcon, NotebookIcon } from "lucide-react";
 
 export interface Skill {
