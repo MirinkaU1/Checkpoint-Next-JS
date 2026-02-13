@@ -215,7 +215,7 @@ export const DATA = {
       links: [
         {
           type: "Télécharger",
-          href: "https://drive.google.com/file/d/1WcPYlUpG-JDgZbaX90zXGCShvqct2Gxi/view?usp=sharing", // Remplacez par votre lien Google Drive
+          href: "https://www.dropbox.com/scl/fi/nft7fykq1m1ob84v4elck/AdhanApp_v0.1.0.apk?rlkey=zwz3cd09otnvytohz9aoyiuq6&st=jzjytxdo&dl=0",
           icon: <Icons.download className="size-3" />,
         },
       ],
