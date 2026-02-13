@@ -10,7 +10,7 @@ interface GithubRepoCardProps {
 
 export function GithubRepoCard({ repo }: GithubRepoCardProps) {
   return (
-    <Card className="group h-full hover:shadow-lg transition-all duration-300 hover:border-primary/50">
+    <Card className="group h-full hover:shadow-lg p-2 rounded-lg bg-muted transition-all duration-300 hover:border-primary/50">
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-2">
           <CardTitle className="text-base font-semibold leading-tight line-clamp-1">

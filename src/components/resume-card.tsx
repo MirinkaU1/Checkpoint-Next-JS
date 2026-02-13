@@ -88,7 +88,7 @@ export const ResumeCard = ({
               <ChevronDownIcon
                 className={cn(
                   "size-4 transform translate-y-[0.5px] opacity-0 transition-all duration-300 ease-out group-hover:translate-y-[2px] group-hover:opacity-100",
-                  isExpanded ? "-rotate-180" : ""
+                  isExpanded ? "-rotate-180" : "",
                 )}
               />
             </button>

@@ -3,12 +3,14 @@ import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ParticlesBackground } from "@/components/particles-background";
 import { ProjectCard } from "@/components/project-card";
+import { MobileProjectCard } from "@/components/mobile-project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import { GithubSection } from "@/components/github-section";
 import Link from "next/link";
+import Image from "next/image";
 import Markdown from "react-markdown";
 
 const BLUR_FADE_DELAY = 0.04;
@@ -109,19 +111,21 @@ export default function Page() {
           </BlurFade>
           <div className="flex flex-wrap gap-2">
             {DATA.skills.map((skill, id) => (
-              <BlurFade 
-                key={`${skill.name}-${id}`} 
+              <BlurFade
+                key={`${skill.name}-${id}`}
                 delay={BLUR_FADE_DELAY * 10 + id * 0.05}
               >
-                <Badge 
-                  key={`${skill.name}-${id}`} 
+                <Badge
+                  key={`${skill.name}-${id}`}
                   className="flex items-center gap-1.5 px-3 py-2"
                   variant="secondary"
                 >
                   {skill.icon && (
-                    <img 
-                      src={skill.icon} 
-                      alt={skill.name} 
+                    <Image
+                      src={skill.icon}
+                      alt={skill.name}
+                      width={16}
+                      height={16}
                       className="h-4 w-4"
                     />
                   )}
@@ -135,37 +139,79 @@ export default function Page() {
       <section id="projects" className="relative z-10">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
-            <div className="flex flex-col items-center  space-y-4">
+            <div className="flex flex-col items-center space-y-4">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   Découvrez mes derniers travaux
                 </h2>
-                {/* <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Ce sont notamment des projets que j&apos;ai fait pendant ma
-                  formation à GoMyCode.
-                </p> */}
               </div>
             </div>
           </BlurFade>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-            {DATA.projects.map((project, id) => (
-              <BlurFade
-                key={project.title}
-                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-              >
-                <ProjectCard
-                  href={project.href}
-                  key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  dates={project.dates}
-                  tags={project.technologies}
-                  images={project.images}
-                  video={project.video}
-                  links={project.links}
-                />
-              </BlurFade>
-            ))}
+
+          {/* Sites Web */}
+          <div className="space-y-6">
+            <BlurFade delay={BLUR_FADE_DELAY * 11.5}>
+              <h3 className="text-2xl font-semibold tracking-tight max-w-[800px] mx-auto">
+                Sites Web
+              </h3>
+            </BlurFade>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+              {DATA.projects
+                .filter((project) => project.category === "website")
+                .map((project, id) => (
+                  <BlurFade
+                    key={project.title}
+                    delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+                  >
+                    <ProjectCard
+                      href={project.href}
+                      key={project.title}
+                      title={project.title}
+                      description={project.description}
+                      dates={project.dates}
+                      tags={project.technologies}
+                      images={project.images}
+                      video={project.video}
+                      links={project.links}
+                    />
+                  </BlurFade>
+                ))}
+            </div>
+          </div>
+
+          {/* Applications Mobiles */}
+          <div className="space-y-6">
+            <BlurFade delay={BLUR_FADE_DELAY * 13}>
+              <h3 className="text-2xl font-semibold tracking-tight max-w-[800px] mx-auto">
+                Applications Mobiles
+              </h3>
+            </BlurFade>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+              {DATA.projects
+                .filter((project) => project.category === "mobile")
+                .map((project, id) => (
+                  <BlurFade
+                    key={project.title}
+                    delay={BLUR_FADE_DELAY * 14 + id * 0.05}
+                  >
+                    <MobileProjectCard
+                      href={project.href}
+                      key={project.title}
+                      title={project.title}
+                      description={project.description}
+                      dates={project.dates}
+                      tags={project.technologies}
+                      images={project.images}
+                      darkImages={
+                        "darkImages" in project ? project.darkImages : undefined
+                      }
+                      video={project.video}
+                      links={project.links}
+                      mobileStyles={project.mobileStyles}
+                    />
+                  </BlurFade>
+                ))}
+            </div>
           </div>
         </div>
       </section>

@@ -138,6 +138,7 @@ export const DATA = {
       href: "https://couple-sarr.wedlyup.com/",
       dates: "Mai 2025 - Juin 2025",
       active: true,
+      category: "website",
       description:
         "Un site de mariage pour Stephane et Carole. Le site présente des informations sur les mariés, les détails de l'événement, et une galerie de photos. ",
       technologies: ["HTML", "CSS", "JavaScript"],
@@ -159,6 +160,7 @@ export const DATA = {
       href: "https://multiplestoretest.netlify.app/",
       dates: "Sept 2024 - Dec 2024",
       active: false,
+      category: "website",
       description:
         "Multiple Store est un site e-commerce permettant de souscrire à des abonnements partagés (Netflix, Spotify, etc..). Construit avec la stack MERN, il propose une interface intuitive, un tableau de bord personnalisé, et une gestion simplifiée des abonnements. Optimisé avec Tailwind CSS.",
       technologies: ["React", "Next.js", "TailwindCSS", "Magic UI"],
@@ -182,6 +184,7 @@ export const DATA = {
       href: "https://mirinkau1.github.io/Project-TailwindCSS/",
       dates: "Sept 2024 - Oct 2024",
       active: true,
+      category: "website",
       description:
         "Un checkpoint qui consistait à créer un blog à l'aide de Tailwind pour structurer la mise en page, les composants de style et améliorer l'aspect visuel.",
       technologies: ["HTML", "CSS", "JavaScript"],
@@ -199,6 +202,62 @@ export const DATA = {
       ],
       images: [],
       video: "/video/projects/trendyblog.mp4",
+    },
+
+    // ═══════════════════════════════════════════════════════════════
+    // 📱 APPLICATIONS MOBILES
+    // ═══════════════════════════════════════════════════════════════
+    // Pour personnaliser le background d'une app mobile, utilisez la propriété "mobileStyles" :
+    //
+    // mobileStyles: {
+    //   gradientFrom: "#115E59",  // Couleur de début du gradient
+    //   gradientVia: "#0d4542",   // Couleur du milieu du gradient
+    //   gradientTo: "#115E59",    // Couleur de fin du gradient
+    // }
+    //
+    // Vous pouvez utiliser n'importe quelle couleur hexadécimale (#RRGGBB)
+    // Le gradient sera animé automatiquement et créera un effet fluide.
+    // ═══════════════════════════════════════════════════════════════
+    {
+      title: "AdhanApp",
+      href: "",
+      dates: "Jan 2025",
+      active: true,
+      category: "mobile",
+      description:
+        "Application mobile de rappel des heures de prière islamiques avec notifications personnalisables. Affiche les horaires de prière basés sur la localisation, avec un design minimaliste et intuitif.",
+      technologies: ["React Native", "JavaScript", "API Adhan", "Nativewind"],
+      links: [
+        {
+          type: "Télécharger",
+          href: "https://drive.google.com/file/d/1WcPYlUpG-JDgZbaX90zXGCShvqct2Gxi/view?usp=sharing", // Remplacez par votre lien Google Drive
+          icon: <Icons.download className="size-3" />,
+        },
+      ],
+      images: [
+        "/img/projects/adhanapp/adhanapp_01.jpg",
+        "/img/projects/adhanapp/adhanapp_02.jpg",
+        "/img/projects/adhanapp/adhanapp_03.jpg",
+        "/img/projects/adhanapp/adhanapp_04.jpg",
+        "/img/projects/adhanapp/adhanapp_05.jpg",
+        "/img/projects/adhanapp/adhanapp_06.jpg",
+        "/img/projects/adhanapp/adhanapp_07.jpg",
+      ],
+      darkImages: [
+        "/img/projects/adhanapp/adhanapp_01_dark.jpg",
+        "/img/projects/adhanapp/adhanapp_02_dark.jpg",
+        "/img/projects/adhanapp/adhanapp_03_dark.jpg",
+        "/img/projects/adhanapp/adhanapp_04_dark.jpg",
+        "/img/projects/adhanapp/adhanapp_05_dark.jpg",
+        "/img/projects/adhanapp/adhanapp_06_dark.jpg",
+        "/img/projects/adhanapp/adhanapp_07_dark.jpg",
+      ],
+      video: "",
+      mobileStyles: {
+        gradientFrom: "#115E59",
+        gradientVia: "#0d4542",
+        gradientTo: "#115E59",
+      },
     },
   ],
   // hackathons: [
