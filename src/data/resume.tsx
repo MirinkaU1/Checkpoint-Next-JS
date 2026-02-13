@@ -203,23 +203,8 @@ export const DATA = {
       images: [],
       video: "/video/projects/trendyblog.mp4",
     },
-
-    // ═══════════════════════════════════════════════════════════════
-    // 📱 APPLICATIONS MOBILES
-    // ═══════════════════════════════════════════════════════════════
-    // Pour personnaliser le background d'une app mobile, utilisez la propriété "mobileStyles" :
-    //
-    // mobileStyles: {
-    //   gradientFrom: "#115E59",  // Couleur de début du gradient
-    //   gradientVia: "#0d4542",   // Couleur du milieu du gradient
-    //   gradientTo: "#115E59",    // Couleur de fin du gradient
-    // }
-    //
-    // Vous pouvez utiliser n'importe quelle couleur hexadécimale (#RRGGBB)
-    // Le gradient sera animé automatiquement et créera un effet fluide.
-    // ═══════════════════════════════════════════════════════════════
     {
-      title: "AdhanApp",
+      title: "AdhanApp v0.1.0",
       href: "",
       dates: "Jan 2025",
       active: true,
