@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { ChevronDownIcon, ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import Markdown from "react-markdown";
 
 interface ResumeCardProps {
   logoUrl: string;
@@ -105,9 +106,11 @@ export const ResumeCard = ({
               duration: 0.7,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="px-6 pb-6 text-xs sm:text-sm"
+            className="overflow-hidden px-6 pb-6"
           >
-            {description}
+            <Markdown className="prose max-w-full text-pretty font-sans text-xs sm:text-sm text-muted-foreground dark:prose-invert prose-p:my-1.5 prose-ul:my-1.5 prose-ul:pl-4 prose-li:my-0.5 prose-strong:text-foreground">
+              {description}
+            </Markdown>
           </motion.div>
         )}
       </div>

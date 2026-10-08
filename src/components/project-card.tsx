@@ -21,6 +21,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import Autoplay from "embla-carousel-autoplay";
 
 interface Props {
@@ -31,6 +32,7 @@ interface Props {
   tags: readonly string[];
   link?: string;
   images?: readonly string[];
+  darkImages?: readonly string[];
   video?: string;
   links?: readonly {
     icon: React.ReactNode;
@@ -47,15 +49,27 @@ export function ProjectCard({
   dates,
   tags,
   link,
-  images,
+  images: lightImages,
+  darkImages,
   video,
   links,
   className,
 }: Props) {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
   const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const images =
+    mounted && resolvedTheme === "dark" && darkImages && darkImages.length > 0
+      ? darkImages
+      : lightImages;
 
   const hasMultipleImages = images && images.length > 1;
   const AUTO_SLIDE_INTERVAL = 5000;

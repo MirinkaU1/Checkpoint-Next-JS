@@ -15,19 +15,24 @@ export const DATA = {
   location: "Abidjan, Côte d'Ivoire",
   locationLink: "https://www.google.com/maps/place/Adjame",
   description:
-    "Développeur full-stack spécialisé en React et Node.js. J'aide à concevoir des applications web optimisées et axées sur l'expérience utilisateur.",
+    "Développeur frontend & mobile spécialisé en React, Next.js et React Native. Je conçois des interfaces web, mobiles et desktop soignées et centrées sur l'expérience utilisateur.",
   summary:
-    "Je suis développeur full-stack avec une solide formation en développement web, acquise à [GoMyCode](/#education), où j'ai approfondi mes compétences en JavaScript, React, et Node.js. Au cours de ma formation, j'ai eu l'occasion de travailler sur plusieurs projets pratiques qui m'ont permis de maîtriser l'architecture des applications web modernes.",
+    "Je suis développeur frontend et mobile, formé à l'[ENSIT](/#education) et à [GoMyCode](/#education). Aujourd'hui chez **DothanGroup**, je développe les interfaces web et mobile de **Kacy**, une plateforme d'assistants IA pour les commerces, ainsi que l'application desktop de **PharmaConnect**, un logiciel de caisse pour pharmacies. J'aime construire des interfaces responsives et agréables à utiliser, avec React, Next.js, React Native et Electron.",
   avatarUrl: "/img/avatar/me.jpg",
   skills: [
     { name: "React", icon: "/svg/reactjs-icon.svg" },
-    { name: "Vue.js", icon: "/svg/vuejs-icon.svg" },
     { name: "Next.js", icon: "/svg/nextjs-icon.svg" },
     { name: "Typescript", icon: "/svg/typescriptlang-icon.svg" },
+    { name: "TailwindCSS", icon: "/svg/tailwindcss-icon.svg" },
+    { name: "React Native", icon: "/svg/reactjs-icon.svg" },
+    { name: "Expo", icon: "/svg/expo-icon.svg" },
+    { name: "Electron", icon: "/svg/electron-icon.svg" },
+    { name: "Vue.js", icon: "/svg/vuejs-icon.svg" },
+    { name: "Figma", icon: "/svg/figma-icon.svg" },
     { name: "Node.js", icon: "/svg/nodejs-icon.svg" },
     { name: "Express", icon: "/svg/expressjs-icon.svg" },
+    { name: "Supabase", icon: "/svg/supabase-icon.svg" },
     { name: "MongoDB", icon: "/svg/mongodb-icon.svg" },
-    { name: "TailwindCSS", icon: "/svg/tailwindcss-icon.svg" },
   ] as Skill[],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -70,6 +75,39 @@ export const DATA = {
 
   work: [
     {
+      company: "DothanGroup",
+      href: "",
+      badges: [],
+      title: "Développeur Frontend & Mobile",
+      logoUrl: "/img/work/dothangroup.png",
+      start: "Février 2026",
+      end: "Présent",
+      description:
+        "**Kacy** — plateforme SaaS d'assistants IA pour commerces et restaurants\n- Développement du **dashboard web** et du **back-office d'administration** (React, TypeScript, Tailwind, shadcn/ui), en **mode clair et sombre**.\n- Développement de l'**application mobile iOS et Android** (Expo / React Native), publiée sur l'**App Store** et **Google Play**.\n- **Connexion aux API** et parcours de configuration des canaux **WhatsApp, Telegram, Instagram et Messenger**.\n- Participation au **backend Node.js**.\n\n**PharmaConnect** — logiciel de caisse et de gestion de pharmacie\n- Développement de l'**application desktop** (Electron, React, Redux).\n- **Mode hors ligne** avec **synchronisation** des ventes au retour de la connexion.\n- Intégration de l'**impression de tickets** et de l'**afficheur client**.",
+    },
+    {
+      company: "MyHotellerie",
+      href: "",
+      badges: [],
+      title: "Développeur Frontend",
+      logoUrl: "/img/work/myhotellerie.png",
+      start: "Avril 2025",
+      end: "Novembre 2025",
+      description:
+        "- **Développement du frontend de trois plateformes d'administration** (back-office **Admin Hôtel** et **Super Admin**).\n- **Intégration des maquettes** en **responsive design**.\n- **Connexion aux API** de l'équipe client.",
+    },
+    {
+      company: "ChezBlos",
+      href: "",
+      badges: [],
+      title: "Développeur Full Stack",
+      logoUrl: "/img/work/chezblos.png",
+      start: "Mai 2025",
+      end: "Septembre 2025",
+      description:
+        "- Développement des **interfaces frontend** des back-offices **Admin** et **Interne**.\n- **Participation à l'interfaçage back-end** du système global.\n- Intégration responsive et **gestion complète des connexions API**.",
+    },
+    {
       company: "Great",
       href: "https://greeet.netlify.app/",
       badges: [],
@@ -77,9 +115,9 @@ export const DATA = {
       title: "Développeur Front-end",
       logoUrl: "/img/work/great.png",
       start: "Novembre 2024",
-      end: "Present",
+      end: "Présent",
       description:
-        "La plateforme Great vise à réunir des talents, des mentors et des entreprises pour créer des opportunités de croissance professionnelle, d'innovation et de développement personnel. En tant que développeur front-end, j'ai contribué à la refonte de l'interface utilisateur, en utilisant Vue.js et Vuetify pour améliorer l'expérience utilisateur.",
+        "Plateforme qui réunit **talents, mentors et entreprises** pour créer des opportunités de croissance professionnelle et d'innovation.\n- Contribution à la **refonte de l'interface utilisateur** avec **Vue.js** et **Vuetify**.\n- Amélioration de l'**expérience utilisateur** de la plateforme.",
     },
   ],
   education: [
@@ -101,7 +139,7 @@ export const DATA = {
     },
     {
       school: "Collège Adventiste Bouaké",
-      href: "https://wlu.ca",
+      href: "",
       degree: "Baccaleauréat D",
       logoUrl: "/img/education/adventiste.jpg",
       start: "2020",
@@ -109,6 +147,34 @@ export const DATA = {
     },
   ],
   projects: [
+    {
+      title: "Kacy — Plateforme web",
+      href: "https://app.kacyai.co/fr/login",
+      dates: "Juin 2026 - Présent",
+      active: true,
+      category: "website",
+      description:
+        "Landing page et dashboard de Kacy, une plateforme SaaS d'assistants IA pour les commerces et restaurants. Les établissements y configurent leur agent, suivent leurs conversations WhatsApp, Telegram, Instagram et Messenger, leurs commandes et réservations, avec mode clair et sombre.",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+      links: [
+        {
+          type: "Website",
+          href: "https://app.kacyai.co/fr/login",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      images: [
+        "/img/projects/kacy/web_01.jpg",
+        "/img/projects/kacy/web_02.jpg",
+        "/img/projects/kacy/web_03.jpg",
+      ],
+      darkImages: [
+        "/img/projects/kacy/web_01_dark.jpg",
+        "/img/projects/kacy/web_02_dark.jpg",
+        "/img/projects/kacy/web_03_dark.jpg",
+      ],
+      video: "",
+    },
     {
       title: "corner-shape Generator",
       href: "https://corner-shape-generator.vercel.app/",
@@ -156,52 +222,52 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Multiple Store",
-      href: "https://multiplestoretest.netlify.app/",
-      dates: "Sept 2024 - Dec 2024",
-      active: false,
-      category: "website",
-      description:
-        "Multiple Store est un site e-commerce permettant de souscrire à des abonnements partagés (Netflix, Spotify, etc..). Construit avec la stack MERN, il propose une interface intuitive, un tableau de bord personnalisé, et une gestion simplifiée des abonnements. Optimisé avec Tailwind CSS.",
-      technologies: ["React", "Next.js", "TailwindCSS", "Magic UI"],
-      links: [
-        {
-          type: "Website",
-          href: "https://multiplestoretest.netlify.app/",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/MirinkaU1/PersonalProject.git",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      images: [],
-      video: "/video/projects/multiplestore.mp4",
-    },
-    {
-      title: "Trendy Blog",
-      href: "https://mirinkau1.github.io/Project-TailwindCSS/",
-      dates: "Sept 2024 - Oct 2024",
+      title: "MyHotellerie",
+      href: "",
+      dates: "Avril 2025 - Novembre 2025",
       active: true,
       category: "website",
       description:
-        "Un checkpoint qui consistait à créer un blog à l'aide de Tailwind pour structurer la mise en page, les composants de style et améliorer l'aspect visuel.",
-      technologies: ["HTML", "CSS", "JavaScript"],
+        "Solution de gestion de la relation client pour les hôtels : demandes de service, boutique, commandes, staff et chat. J'ai développé le frontend de trois plateformes d'administration (back-office Admin Hôtel et Super Admin) et leur connexion aux API.",
+      technologies: ["Back-office", "Responsive design", "API REST"],
+      links: [],
+      images: ["/img/projects/myhotellerie/web_01.jpg"],
+      video: "",
+    },
+    {
+      title: "Kacy AI",
+      href: "",
+      dates: "Juin 2026 - Présent",
+      active: true,
+      category: "mobile",
+      description:
+        "Application mobile de Kacy : les commerçants suivent l'activité de leur agent IA, répondent aux clients et reprennent la main sur les conversations, gèrent plusieurs établissements et reçoivent des notifications en temps réel.",
+      technologies: ["React Native", "Expo", "TypeScript", "Expo Router"],
       links: [
         {
-          type: "Website",
-          href: "https://mirinkau1.github.io/Project-TailwindCSS/",
-          icon: <Icons.globe className="size-3" />,
+          type: "App Store",
+          href: "https://apps.apple.com/us/app/kacy-ai/id6793906967",
+          icon: <Icons.download className="size-3" />,
         },
         {
-          type: "Source",
-          href: "https://github.com/MirinkaU1/Project-TailwindCSS.git",
-          icon: <Icons.github className="size-3" />,
+          type: "Google Play",
+          href: "https://play.google.com/store/apps/details?id=com.dothangroup.kacy",
+          icon: <Icons.download className="size-3" />,
         },
       ],
-      images: [],
-      video: "/video/projects/trendyblog.mp4",
+      images: [
+        "/img/projects/kacy/kacy_01.jpg",
+        "/img/projects/kacy/kacy_02.jpg",
+        "/img/projects/kacy/kacy_03.jpg",
+        "/img/projects/kacy/kacy_04.jpg",
+        "/img/projects/kacy/kacy_05.jpg",
+      ],
+      video: "",
+      mobileStyles: {
+        gradientFrom: "#3F7D3A",
+        gradientVia: "#2D5A29",
+        gradientTo: "#3F7D3A",
+      },
     },
     {
       title: "AdhanApp v0.1.0",

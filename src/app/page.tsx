@@ -29,7 +29,7 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                 yOffset={8}
-                text={`Hi, I'm ${DATA.pseudo} 👋`}
+                text={`Salut, moi c'est ${DATA.pseudo} 👋`}
               />
               <BlurFadeText
                 className="max-w-[600px] md:text-xl"
@@ -171,6 +171,9 @@ export default function Page() {
                       dates={project.dates}
                       tags={project.technologies}
                       images={project.images}
+                      darkImages={
+                        "darkImages" in project ? project.darkImages : undefined
+                      }
                       video={project.video}
                       links={project.links}
                     />
