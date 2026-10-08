@@ -10,7 +10,7 @@ export const DATA = {
   name: "Cherif Mohamed Abraham",
   pseudo: "Moimed",
   initials: "CMA",
-  url: "https://moimed.dev",
+  url: "https://moimed.cloud",
   githubUsername: "MirinkaU1",
   location: "Abidjan, Côte d'Ivoire",
   locationLink: "https://www.google.com/maps/place/Adjame",
